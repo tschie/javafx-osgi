@@ -18,10 +18,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: ${{ github.workspace }} # location for the settings.xml file
-
     - name: Wrap and publish artifacts
-      run: mvn p2:site deploy:deploy-file -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn p2:site deploy:deploy-file
       env:
         GITHUB_TOKEN: ${{ github.token }}
