@@ -22,6 +22,6 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Wrap and publish artifacts
-      run: mvn p2:site deploy:deploy-file -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn p2:site
       env:
         GITHUB_TOKEN: ${{ github.token }}
