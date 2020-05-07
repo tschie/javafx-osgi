@@ -80,6 +80,7 @@
                         <goals>
                             <goal>deploy-file</goal>
                         </goals>
+                        <phase>validate</phase>
                         <configuration>
                             <file>./target/repository/plugins/org.openjfx.javafx-base.${platform}_11.0.0.jar</file>
                             <artifactId>javafx-base-osgi</artifactId>
@@ -90,6 +91,7 @@
                         <goals>
                             <goal>deploy-file</goal>
                         </goals>
+                        <phase>validate</phase>
                         <configuration>
                             <file>./target/repository/plugins/org.openjfx.javafx-controls.${platform}_11.0.0.jar</file>
                             <artifactId>javafx-controls-osgi</artifactId>
@@ -100,6 +102,7 @@
                         <goals>
                             <goal>deploy-file</goal>
                         </goals>
+                        <phase>validate</phase>
                         <configuration>
                             <file>./target/repository/plugins/org.openjfx.javafx-graphics.${platform}_11.0.0.jar</file>
                             <artifactId>javafx-graphics-osgi</artifactId>
@@ -110,6 +113,7 @@
                         <goals>
                             <goal>deploy-file</goal>
                         </goals>
+                        <phase>validate</phase>
                         <configuration>
                             <file>./target/repository/plugins/org.openjfx.javafx-fxml.${platform}_11.0.0.jar</file>
                             <artifactId>javafx-fxml-osgi</artifactId>
