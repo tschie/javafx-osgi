@@ -7,6 +7,11 @@
     <version>11.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <!--one of mac, linux, win-->
+        <platform>linux</platform>
+    </properties>
+
     <pluginRepositories>
         <pluginRepository>
             <id>reficio</id>
@@ -39,6 +44,27 @@
                                         <Require-Capability>osgi.ee</Require-Capability>
                                     </instructions>
                                 </artifact>
+                                <artifact>
+                                    <id>org.openjfx:javafx-controls:11</id>
+                                    <instructions>
+                                        <!--Fix UNKNOWN version in manifest-->
+                                        <Require-Capability>osgi.ee</Require-Capability>
+                                    </instructions>
+                                </artifact>
+                                <artifact>
+                                    <id>org.openjfx:javafx-graphics:11</id>
+                                    <instructions>
+                                        <!--Fix UNKNOWN version in manifest-->
+                                        <Require-Capability>osgi.ee</Require-Capability>
+                                    </instructions>
+                                </artifact>
+                                <artifact>
+                                    <id>org.openjfx:javafx-fxml:11</id>
+                                    <instructions>
+                                        <!--Fix UNKNOWN version in manifest-->
+                                        <Require-Capability>osgi.ee</Require-Capability>
+                                    </instructions>
+                                </artifact>
                             </artifacts>
                         </configuration>
                     </execution>
@@ -54,14 +80,46 @@
                         <goals>
                             <goal>deploy-file</goal>
                         </goals>
+                        <configuration>
+                            <file>./target/repository/plugins/org.openjfx.javafx-base.${platform}_11.0.0.jar</file>
+                            <artifactId>javafx-base-osgi</artifactId>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>publish</id>
+                        <goals>
+                            <goal>deploy-file</goal>
+                        </goals>
+                        <configuration>
+                            <file>./target/repository/plugins/org.openjfx.javafx-controls.${platform}_11.0.0.jar</file>
+                            <artifactId>javafx-controls-osgi</artifactId>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>publish</id>
+                        <goals>
+                            <goal>deploy-file</goal>
+                        </goals>
+                        <configuration>
+                            <file>./target/repository/plugins/org.openjfx.javafx-graphics.${platform}_11.0.0.jar</file>
+                            <artifactId>javafx-graphics-osgi</artifactId>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>publish</id>
+                        <goals>
+                            <goal>deploy-file</goal>
+                        </goals>
+                        <configuration>
+                            <file>./target/repository/plugins/org.openjfx.javafx-fxml.${platform}_11.0.0.jar</file>
+                            <artifactId>javafx-fxml-osgi</artifactId>
+                        </configuration>
                     </execution>
                 </executions>
                 <configuration>
-                    <file>./target/repository/plugins/org.openjfx.javafx-base.linux_11.0.0.jar</file>
                     <groupId>${project.groupId}</groupId>
-                    <artifactId>javafx-base-osgi</artifactId>
                     <version>${project.version}</version>
-                    <classifier>linux</classifier>
+                    <classifier>${platform}</classifier>
                     <packaging>jar</packaging>
                     <url>https://maven.pkg.github.com/tschie/javafx-osgi</url>
                     <repositoryId>github</repositoryId>
