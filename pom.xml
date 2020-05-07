@@ -64,6 +64,7 @@
                     <classifier>linux</classifier>
                     <packaging>jar</packaging>
                     <url>https://maven.pkg.github.com/tschie/javafx-osgi</url>
+                    <repositoryId>github</repositoryId>
                 </configuration>
             </plugin>
             <plugin>
