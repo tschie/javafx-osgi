@@ -57,11 +57,11 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <file>./target/repository/plugins/org.openjfx.javafx-base.win_11.0.0.jar</file>
+                    <file>./target/repository/plugins/org.openjfx.javafx-base.linux_11.0.0.jar</file>
                     <groupId>${project.groupId}</groupId>
                     <artifactId>javafx-base-osgi</artifactId>
                     <version>${project.version}</version>
-                    <classifier>win</classifier>
+                    <classifier>linux</classifier>
                     <packaging>jar</packaging>
                     <url>https://maven.pkg.github.com/tschie/javafx-osgi</url>
                 </configuration>
