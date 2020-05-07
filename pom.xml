@@ -57,7 +57,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <file>${project.build.directory}/repository/plugins/org.openjfx.javafx-base.win_11.0.0.jar</file>
+                    <file>./target/repository/plugins/org.openjfx.javafx-base.win_11.0.0.jar</file>
                     <groupId>${project.groupId}</groupId>
                     <artifactId>javafx-base-osgi</artifactId>
                     <version>${project.version}</version>
