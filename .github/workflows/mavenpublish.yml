@@ -8,10 +8,8 @@ on:
     types: [created]
 
 jobs:
-  build:
-
+  linux:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
@@ -19,6 +17,30 @@ jobs:
       with:
         java-version: 11
     - name: Wrap and publish artifacts
-      run: mvn p2:site deploy:deploy-file
+      run: mvn -Dplatform=linux p2:site deploy:deploy-file
       env:
         GITHUB_TOKEN: ${{ github.token }}
+  mac:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - name: Wrap and publish artifacts
+        run: mvn -Dplatform=mac p2:site deploy:deploy-file
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+  win:
+    runs-on: win-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - name: Wrap and publish artifacts
+        run: mvn -Dplatform=win p2:site deploy:deploy-file
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
