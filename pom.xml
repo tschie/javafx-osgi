@@ -76,7 +76,7 @@
                 <version>2.7</version>
                 <executions>
                     <execution>
-                        <id>publish</id>
+                        <id>base</id>
                         <goals>
                             <goal>deploy-file</goal>
                         </goals>
@@ -86,7 +86,7 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>publish</id>
+                        <id>controls</id>
                         <goals>
                             <goal>deploy-file</goal>
                         </goals>
@@ -96,7 +96,7 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>publish</id>
+                        <id>graphics</id>
                         <goals>
                             <goal>deploy-file</goal>
                         </goals>
@@ -106,7 +106,7 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>publish</id>
+                        <id>fxml</id>
                         <goals>
                             <goal>deploy-file</goal>
                         </goals>
