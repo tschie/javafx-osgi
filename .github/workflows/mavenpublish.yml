@@ -17,7 +17,7 @@ jobs:
       with:
         java-version: 11
     - name: Wrap and publish artifacts
-      run: mvn -Dplatform=linux p2:site validate
+      run: mvn -Dplatform=linux -Dpom=true p2:site validate
       env:
         GITHUB_TOKEN: ${{ github.token }}
   mac:
